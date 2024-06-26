@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  background-color: aliceblue;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.card-header {
+  background-color: #2fd3ae !important;
+  color: white;
+}
+#example > thead > tr > th {
+  background-color: #2fd3ae !important;
+}
+/* Custom CSS using CSS Grid for DataTables buttons layout */
+.dt-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr)); /* Adjust column width as needed */
+    grid-gap: 10px; /* Adjust the gap between buttons */
+}
+.dt-button {
+    width: 100%;
+}
+/* Adjust width for Excel and PDF buttons */
+.dt-button.excel,
+.dt-button.pdf {
+    grid-column: span 1; /* Make the button span across one column */
+}
+/* Adjust width for Download as Image button */
+.dt-button.w-100 {
+    grid-column: span 2; /* Make the button span across two columns */
+}
+.paginate_button{
+    background-color: #dbf0df !important;
+}
+.paginate_button.current{
+    background-color: #bbe3c2;
+}
+.paginate_button.next{
+    background-color: #2fd3ae !important;
+}
+.paginate_button.previous{
+    background-color: #2fd3ae !important;
+}
