@@ -1,4 +1,27 @@
 $(document).ready(function () {
+    var currentPage = window.location.pathname.split('/').pop();
+
+    // Iterate over each <a> tag in the sidebar
+    $('aside ul li a').each(function () {
+        var href = $(this).attr('href');
+
+        // Check if the href matches the current page
+        if (href === currentPage) {
+            // Change the color of the corresponding <li>
+            $(this).closest('li').addClass('active-link');
+        }
+    });
+    //sidebar toggle code 
+    $('#toggleSidebar').on('click', function () {
+        $('aside').animate({
+            left: $('aside').css('left') == '0px' ? '-100vw' : '0px'
+        });
+    });
+    $('#closeSidebar').on('click',function(){
+        $('aside').css({"left":"-100vw"});
+    })
+
+
     // Append rows to the table with indexing and student data
     students.forEach((val, index) => {
         $('#example').append('<tr><td>' + (index + 1) + '</td><td>' + val.name + '</td><td>' + val.building + '</td></tr>');
@@ -59,4 +82,8 @@ $(document).ready(function () {
             table.column(2).search('').draw(); // Adjust index for building column
         }
     });
+
+
+
 });
+

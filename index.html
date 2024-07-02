@@ -12,11 +12,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<link rel="shortcut icon" href="assets/media/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <aside>
+        <p id="closeSidebarParent"><buttton class="btn btn-lg" id="closeSidebar"><i class="fa-solid fa-xmark"></i></buttton></p>
+        <ul>
+            <li>
+                <a href="index.html">Student List</a>
+            </li>
+            <li>
+                <a href="15-jamat.html">15 Jamaat</a>
+            </li>
+        </ul>
+    </aside>
+    <div class="container-fluid p-0 m-0">
+        <div class="col-12 nav">
+            <button class="btn btn-lg" id="toggleSidebar"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </div>
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
@@ -31,7 +47,9 @@
                                 <option value="">All Buildings</option>
                             </select>
                         </div>
-                        <table id="example" class="table table-sm table-bordered table-striped pt-3 text-start table-success" style="width:100%">
+                        <table id="example"
+                            class="table table-sm table-bordered table-striped pt-3 text-start table-success"
+                            style="width:100%">
                             <thead class="">
                                 <tr>
                                     <th>sr#</th>

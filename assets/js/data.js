@@ -41,7 +41,7 @@ var students = [
     { "name": "Rehan", "building": "Tahir Manzil" },
     { "name": "Yusuf", "building": "Tahir Manzil" },
     { "name": "Ali bin A.B Khalique (2205)", "building": "Elegant Residency" },
-    { "name": "(2102)", "building": "Elegant Residency" },
+    { "name": "Noorul Haq(2102)", "building": "Elegant Residency" },
     { "name": "Rashid(1805)", "building": "Elegant Residency" },
     { "name": "Huzaifa(1806)", "building": "Elegant Residency" },
     { "name": "Uzair(1706)", "building": "Elegant Residency" },

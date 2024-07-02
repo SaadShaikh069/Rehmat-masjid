@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.8/datatables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.5/css/buttons.dataTables.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <aside>
+        <div id="closeSidebarParent" class="d-flex justify-content-between">
+        <h2>Rehmat Masjid</h2>
+        <button class="btn btn-lg" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <ul>
+            <li>
+                <a href="index.html">Student List</a>
+            </li>
+            <li>
+                <a href="15-jamat.html">15 Jamaat</a>
+            </li>
+        </ul>
+    </aside>
+    <div class="container-fluid p-0 m-0">
+        <div class="col-12 nav">
+            <button class="btn btn-lg" id="toggleSidebar"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 1
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Elegant Residancy</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Mehmudul Hasan</li>
+                                        <li>Muhammad Bhai</li>
+                                        <li>Maulana Saaqib</li>
+                                        <li>A Khaliq</li>
+                                        <li>Umar</li>
+                                        <li>Tanveer</li>
+                                        <li>Hashim</li>
+                                        <li>Kashif</li>
+                                        <li>Musab</li>
+                                        <li>Siddique Bhai</li>
+                                        <li>Shafique Daniyal</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Saad</li>
+                                        <li>Arif Javed Hotel</li>
+                                        <li>Rashid Laundary</li>
+                                        <li>Kashif Laundary</li>
+                                        <li>Mohsin</li>
+                                        <li>Irfan Gulya Bhai</li>
+                                        <li>Maulana Anas</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 2
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Rehmat Manzil</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Rehan Allana</li>
+                                        <li>Hamidullah</li>
+                                        <li>Abdul Ragib</li>
+                                        <li>Talha Bin Khalid</li>
+                                        <li>Huzaifa Bin Rehan</li>
+                                        <li>Shoeb Indonesia</li>
+                                        <li>Faisal Javed BST</li>
+                                        <li>Zubair A Gani</li>
+                                        <li>Chand Babu</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Abde Munaf</li>
+                                        <li>Nadeem Bhai</li>
+                                        <li>Huzaifa Nadeem</li>
+                                        <li>A Jabbar Chand</li>
+                                        <li>Sohail Chand</li>
+                                        <li>Khalid Weldino</li>
+                                        <li>Azhar Mobile</li>
+                                        <li>Ashraf Ready</li>
+                                        <li>Abdullah Choudhry</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 3
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Siddiq Mension, Ramzan Bangi, Shama, Ajju Bldg</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Sajid Chauhan</li>
+                                        <li>Shafiq Std</li>
+                                        <li>Maulana Ehsan Sahab</li>
+                                        <li>Taha</li>
+                                        <li>Rizwan Bhai</li>
+                                        <li>Tauheed</li>
+                                        <li>Izhaar Bhai</li>
+                                        <li>Abdul Rehman (Bholu)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Shakeel Bhai Kaanch</li>
+                                        <li>Javed Jiddu</li>
+                                        <li>Talha Chotu</li>
+                                        <li>Mushtaq Mukhtar</li>
+                                        <li>Maulana Saifullah</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 4
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Lambi Chawl A + B</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Abid</li>
+                                        <li>Mumtaz Bag</li>
+                                        <li>Hafiz Affan</li>
+                                        <li>Iftekhar Bhai</li>
+                                        <li>Shadab</li>
+                                        <li>Salim Petrol</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Dr. Alam Guddu</li>
+                                        <li>Zaid Ruknuddin</li>
+                                        <li>Shoeb Ruknuddin</li>
+                                        <li>Saif Saviour</li>
+                                        <li>Ehtesham Saviour</li>
+                                        <li>Shamsher Saviour</li>
+                                        <li>Rashid Murgi</li>
+                                        <li>Imran Bhai</li>
+                                        <li>A Aziz Ajju Bhai</li>
+                                        <li>Shehroz</li>
+                                        <li>Khalid Madx</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 5
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Tahir Manzil, Kokni Chawl, Siwai Bldg.</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Sageer Bhai</li>
+                                        <li>Asrar Bhai</li>
+                                        <li>Jameel Press</li>
+                                        <li>Usman Gani</li>
+                                        <li>Tauseef Sagir</li>
+                                        <li>Shakilur Rehman</li>
+                                        <li>A Rehman</li>
+                                        <li>Sufiyan</li>
+                                        <li>Ali Bhai</li>
+                                        <li>Abdul Majid Bhai</li>
+                                        <li>Saifee</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Huzaifa Khalid</li>
+                                        <li>Asif Texal</li>
+                                        <li>Adnan Blue Mach</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 6
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>White Pearl</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Rehan BST</li>
+                                        <li>Ubaid</li>
+                                        <li>Aasim</li>
+                                        <li>Hussain Papa</li>
+                                        <li>Aqib Shahid</li>
+                                        <li>Adnan Shaihd</li>
+                                        <li>Maulana Nihan</li>
+                                        <li>Aasim</li>
+                                        <li>Umar Sagar</li>
+                                        <li>Kaif Mobile</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Abdullah Aslam</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 7
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Mohamdi Manzil, Kasam Haddi Chawl, Jhadu Gali</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Irshad Bhai</li>
+                                        <li>Matlub Bhai</li>
+                                        <li>Gulam (Ladda)</li>
+                                        <li>Naeem Bhai</li>
+                                        <li>Ayaz</li>
+                                        <li>Mursalin</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Farmaan</li>
+                                        <li>Sajid Salon</li>
+                                        <li>Rehan</li>
+                                        <li>Mushtaq Kaanch</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 8
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Qadir Comp. Mun. Bldg, 1.5 Gali</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Meraj Bhai</li>
+                                        <li>Sohail Bhai</li>
+                                        <li>Ahrar</li>
+                                        <li>Shehbaz</li>
+                                        <li>A Malik</li>
+                                        <li>Moosa</li>
+                                        <li>Samir White </li>
+                                        <li>Salim Abu Dujana</li>
+                                        <li>Khalid Shirt</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Nabi Hasan</li>
+                                        <li>Brother Nabi</li>
+                                        <li>Ahsan Ahrar</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 9
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Bharat Bazar</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Ishtiyaq Pipe</li>
+                                        <li>Israr</li>
+                                        <li>Anwar</li>
+                                        <li>Atiq Chacha</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 10
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Gafoor Seth Chawl to Salman Shop</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Mansoor</li>
+                                        <li>Shakir Bhai</li>
+                                        <li>Unaiz</li>
+                                        <li>Muzaffar Bhai</li>
+                                        <li>Umair Zubair</li>
+                                        <li>Javed Bhai</li>
+                                        <li>Ammar Nisar</li>
+                                        <li>Sadruddin Bhai</li>
+                                        <li>Arsalan</li>
+                                        <li>Asad Sadruddin</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Amjad Pinky</li>
+                                        <li>Khalid Bhai</li>
+                                        <li>Altamash</li>
+                                        <li>Musheer Yaseen</li>
+                                        <li>Abdul Qadir</li>
+                                        <li>Mohd. Kaif</li>
+                                        <li>Afzal</li>
+                                        <li>Imtiyaz</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 11
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Rizlen Se Dargah Tak</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Taiyab</li>
+                                        <li>Aamir</li>
+                                        <li>Shafiullah</li>
+                                        <li>Shoeb</li>
+                                        <li>NizamurRehman</li>
+                                        <li>Salman</li>
+                                        <li>Maruf Bhai</li>
+                                        <li>Imtiyaz Bhai </li>
+                                        <li>Jabir Bhai</li>
+                                        <li>Arshad</li>
+                                        <li>Ayaz Nisar</li>
+                                        <li>Azmat Ali</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 12
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>7 / 8 / 9 Gali</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Tariq</li>
+                                        <li>A Rehman Bhai</li>
+                                        <li>Wasif</li>
+                                        <li>Anwaar</li>
+                                        <li>Aatif</li>
+                                        <li>Adil Ahmed</li>
+                                        <li>Mahe Alam Bhai</li>
+                                        <li>Shane Ahmed</li>
+                                        <li>Abubakar</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 13
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Zaitoon Manzil, Majju Bhai Bldg, 2nd Gali</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Tauseef</li>
+                                        <li>Hanif Bhai</li>
+                                        <li>Shaukat Ali</li>
+                                        <li>Talha Naeem</li>
+                                        <li>Zaid A Hai</li>
+                                        <li>Saud</li>
+                                        <li>Zia Anwar</li>
+                                        <li>Akram Bhai</li>
+                                        <li>Waqar Majju</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Ubaid A Hayi</li>
+                                        <li>Faizan Manzoor</li>
+                                        <li>Siftain</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 14
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>Duncan Road to 2 Tanki</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Fazlur Rehman</li>
+                                        <li>Zubair Bhai</li>
+                                        <li>Abubakar Bhai</li>
+                                        <li>Amjad Synod</li>
+                                        <li>Amir Lehri</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                                    <ul>
+                                        <li>Inam Synod</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 my-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Jamaat 15
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Area: <span>5th Gali. Shahid Bhai to Ali Bldg</span></h5>
+                        <div class="card-text">
+                            <ul>
+                                <li>
+                                    <span>Mutaharrik</span>
+                                    <ul>
+                                        <li>Shahid Bhai</li>
+                                        <li>Wahidul Hasan Bhai</li>
+                                        <li>Jamal Bhai</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span>Gair Mutaharrik</span>
+                            </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.0.8/datatables.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.5/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.print.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+        integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

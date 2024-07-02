@@ -1,44 +1,116 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 body {
-  background-color: aliceblue;
+  background: rgb(216, 255, 240);
+  background: linear-gradient(
+    341deg,
+    rgba(216, 255, 240, 1) 0%,
+    rgba(192, 233, 237, 1) 50%,
+    rgba(211, 238, 218, 1) 100%
+  );
   font-family: "Roboto Condensed", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 .card-header {
-  background-color: #2fd3ae !important;
-  color: white;
+  background: rgb(215, 253, 235);
+  background: linear-gradient(
+    341deg,
+    rgba(215, 253, 235, 1) 0%,
+    rgba(211, 240, 221, 1) 93%
+  );
+
+}
+.display-6 {
+  font-weight: 400 !important;
 }
 #example > thead > tr > th {
-  background-color: #2fd3ae !important;
+  background: rgb(215, 253, 235);
+  background: linear-gradient(
+    341deg,
+    rgba(215, 253, 235, 1) 0%,
+    rgba(211, 240, 221, 1) 93%
+  );
 }
 /* Custom CSS using CSS Grid for DataTables buttons layout */
 .dt-buttons {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr)); /* Adjust column width as needed */
-    grid-gap: 10px; /* Adjust the gap between buttons */
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(45%, 1fr)
+  ); /* Adjust column width as needed */
+  grid-gap: 10px; /* Adjust the gap between buttons */
 }
 .dt-button {
-    width: 100%;
+  width: 100%;
 }
 /* Adjust width for Excel and PDF buttons */
 .dt-button.excel,
 .dt-button.pdf {
-    grid-column: span 1; /* Make the button span across one column */
+  grid-column: span 1; /* Make the button span across one column */
 }
 /* Adjust width for Download as Image button */
 .dt-button.w-100 {
-    grid-column: span 2; /* Make the button span across two columns */
+  grid-column: span 2; /* Make the button span across two columns */
 }
-.paginate_button{
-    background-color: #dbf0df !important;
+.paginate_button {
+  background-color: #dbf0df !important;
 }
-.paginate_button.current{
-    background-color: #bbe3c2;
+.paginate_button.current {
+  background: linear-gradient(109.6deg, rgb(170, 255, 169) 11.2%, rgb(17, 255, 189) 91.1%) !important;
 }
-.paginate_button.next{
-    background-color: #2fd3ae !important;
+.paginate_button.next {
+  /* background-color: #4eac4c !important; */
+  background: linear-gradient(109.6deg, rgb(170, 255, 169) 11.2%, rgb(17, 255, 189) 91.1%);
 }
-.paginate_button.previous{
-    background-color: #2fd3ae !important;
+.paginate_button.previous {
+  background: linear-gradient(109.6deg, rgb(170, 255, 169) 11.2%, rgb(17, 255, 189) 91.1%);
+}
+
+.nav {
+  background-image: url("../media/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: #ffffff !important; */
+}
+aside {
+  height: 100vh;
+  width: 70vw;
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  /* background-color: white; */
+  background: rgb(215, 253, 235);
+  z-index: 10;
+  transition: ease-out 0.5s;
+}
+aside > div {
+  text-align: end;
+}
+aside > div > h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+aside > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 5vh !important;
+}
+aside > ul > li {
+  margin-bottom: 1rem;
+}
+aside > ul > li > a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+aside > ul > li > a:hover {
+  background-color: #eee;
+}
+.active-link{
+  background: linear-gradient(109.6deg, rgb(170, 255, 169) 11.2%, rgb(17, 255, 189) 91.1%);
 }
