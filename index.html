@@ -22,14 +22,15 @@
     <link rel="apple-touch-icon" sizes="72x72" href="assets/media/favicon-og-72.ico">
     <link rel="apple-touch-icon" sizes="96x96" href="assets/media/favicon-96.ico">
     <link rel="apple-touch-icon" sizes="144x144" href="assets/media/favicon-144.ico">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.0.1">
 </head>
 
 <body>
     <aside>
-        <p id="closeSidebarParent">
+        <div id="closeSidebarParent" class="d-flex justify-content-between">
+            <h3 class="my-auto ms-3">Rehmat Masjid</h3>
             <buttton class="btn btn-lg" id="closeSidebar"><i class="fa-solid fa-xmark"></i></buttton>
-        </p>
+        </div>
         <ul>
             <li>
                 <a href="index.html">Student List</a>
@@ -44,6 +45,7 @@
             <button class="btn btn-lg" id="toggleSidebar"><i class="fa-solid fa-bars"></i></button>
         </div>
     </div>
+    <div id="overlay"></div>
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
@@ -102,8 +104,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/data.js?v=1.0.0.1"></script>
+    <script src="assets/js/main.js?v=1.0.0.1"></script>
 </body>
 
 </html>

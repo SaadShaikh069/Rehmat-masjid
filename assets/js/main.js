@@ -12,15 +12,31 @@ $(document).ready(function () {
         }
     });
     //sidebar toggle code 
-    $('#toggleSidebar').on('click', function () {
-        $('aside').animate({
-            left: $('aside').css('left') == '0px' ? '-100vw' : '0px'
-        });
-    });
-    $('#closeSidebar').on('click',function(){
-        $('aside').css({"left":"-100vw"});
-    })
+    // $('#toggleSidebar').on('click', function () {
+    //     $('aside').animate({
+    //         left: $('aside').css('left') == '0px' ? '-100vw' : '0px'
+    //     });
+    // });
+    // $('#closeSidebar').on('click',function(){
+    //     $('aside').css({"left":"-100vw"});
+    // })
 
+
+    function toggleSidebar(isOpen) {
+        $('aside').animate({ left: isOpen ? '0px' : '-100vw' }, 300, function () {
+            $('#overlay').fadeToggle(isOpen);
+            $('body').css('overflow', isOpen ? 'hidden' : 'auto');
+        });
+    }
+
+    $('#toggleSidebar').on('click', function () {
+        const isOpen = $('aside').css('left') !== '0px';
+        toggleSidebar(isOpen);
+    });
+
+    $('#closeSidebar, #overlay').on('click', function () {
+        toggleSidebar(false);
+    });
 
     // Append rows to the table with indexing and student data
     students.forEach((val, index) => {
