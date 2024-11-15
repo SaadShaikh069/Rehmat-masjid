@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="manifest" href="manifest.json">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+
+</head>
+<style>
+    .container-fluid {
+        background: hsla(210, 90%, 80%, 1);
+
+        background: linear-gradient(90deg,
+                hsla(210, 90%, 80%, 1) 0%,
+                hsla(212, 93%, 49%, 1) 100%);
+
+        background: -moz-linear-gradient(90deg,
+                hsla(210, 90%, 80%, 1) 0%,
+                hsla(212, 93%, 49%, 1) 100%);
+
+        background: -webkit-linear-gradient(90deg,
+                hsla(210, 90%, 80%, 1) 0%,
+                hsla(212, 93%, 49%, 1) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#9FCCFA", endColorstr="#0974F1", GradientType=1);
+        margin-bottom: 0 !important;
+    }
+</style>
+
+<body>
+    <div class="bottom-nav">
+        <button class="active"><a href="index.html"><i class="fa-solid fa-house"></i></a></button>
+        <button><a href="calendar.html"><i class="fa-solid fa-calendar-days"></i></a></button>
+        <button><a href="compass.html"><i class="fa-regular fa-compass"></i></a></button>
+        <button><a href="hadis.html"><i class="fa-solid fa-bars-progress"></i></a></button>
+        <button><a href="setting.html"><i class="fa-solid fa-gear"></i></a></button>
+    </div>
+
+    <div class="top-nav bg-info">
+        Qazae Umri
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 calendar-container">
+                <div id="calendar-navigation">
+                    <button id="prev-month"><i class="fas fa-arrow-left"></i></button>
+                    <span id="calendar-month-year"></span>
+                    <button id="next-month"><i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div id="calendar" class=""></div>
+
+            </div>
+        </div>
+    </div>
+    <!-- MDB -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.umd.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

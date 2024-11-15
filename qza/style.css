@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'Digital7';
+    src: url('font/digital-7.ttf') format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary: #00a9ff;
+  --secondary: #89cff3;
+  --third-color: #a0e9ff;
+  --background: #cdf5fd;
+  --text-color: white;
+}
+.gradient-primary{
+  background: hsla(210, 90%, 80%, 1);
+
+        background: linear-gradient(90deg,
+                hsla(210, 90%, 80%, 1) 0%,
+                hsla(212, 93%, 49%, 1) 100%);
+
+        background: -moz-linear-gradient(90deg,
+                hsla(210, 90%, 80%, 1) 0%,
+                hsla(212, 93%, 49%, 1) 100%);
+
+        background: -webkit-linear-gradient(90deg,
+                hsla(210, 90%, 80%, 1) 0%,
+                hsla(212, 93%, 49%, 1) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#9FCCFA", endColorstr="#0974F1", GradientType=1);
+        margin-bottom: 0 !important;
+}
+.bottom-nav {
+  background-color: var(--secondary);
+  width: 100%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 7vh;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  z-index: 99;
+}
+.bottom-nav > button {
+  background-color: transparent;
+  border: transparent;
+}
+.bottom-nav > button > a {
+  color: black;
+}
+.bottom-nav > button.active > a {
+  color: var(--primary);
+}
+.top-nav {
+  width: 100%;
+  height: 7vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  z-index: 99;
+}
+.container-fluid {
+  height: 86vh;
+  margin-top: 7vh;
+  margin-bottom: 50vh;
+  padding: 10px 0 10px 0;
+}
+.digital-clock {
+    font-family: 'Digital7', sans-serif;
+    letter-spacing: 10px;
+}
+.digital-clock>small{
+  font-size: 1.3rem;
+}
+.nav-tabs {
+  display: flex !important;
+  justify-content: space-between;
+}
+.nav-item {
+  width: 30% !important;
+  text-align: center;
+}
+a.nav-link.active {
+  background-color: var(--primary) !important;
+  color: var(--text-color) !important;
+}
+.nav-tabs .nav-link:hover {
+  background-color: none !important;
+}
+.card-body {
+  overflow-y: auto;
+}
+/* ===================== calendar ============================  */
+#calendar {
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+#calendar-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+#calendar-navigation button {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#calendar-navigation i {
+  color: #333;
+}
+
+#calendar-month-year {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 20px;
+}
+#calendar-month-year small {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: #c1c1c1;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+}
+
+.calendar-day {
+  text-align: center;
+  font-size: 0.7rem;
+  position: relative;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+}
+
+.calendar-day small {
+  display: block;
+  font-size: 0.5rem;
+  color: #c1c1c1;
+  margin-top: 5px;
+}
+.calendar-day.bg-primary small,
+.calendar-day.bg-danger small,
+.calendar-day.bg-warning small {
+  color: white;
+}
+/* ================ compass ================  */
+.compass-container {
+    text-align: center;
+}
+
+.compass {
+    width: 200px;
+    height: 200px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    position: relative;
+    margin: 20px auto;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.kaaba-image {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none; /* Ensures the image is not interactive */
+}
+
+.needle {
+    width: 2px;
+    height: 80px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    transform: rotate(0deg);
+    z-index: 2;
+}
+
+/* Optional: Add styles for labels or direction markers */
+.compass::before {
+    content: 'N';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bg-warningg{
+background-color: #FFB300; /* Golden Yellow */
+
+
+}
