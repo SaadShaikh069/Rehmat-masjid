@@ -2,7 +2,7 @@
   "name": "Qaza e Umri",
   "short_name": "Qaza e Umri",
   "description": "Track and manage Qaza Namaaz with accurate timings and Islamic calendar",
-  "start_url": "/index.html",
+  "start_url": "https://saadshaikh069.github.io/Rehmat-masjid-students-list/qza/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
