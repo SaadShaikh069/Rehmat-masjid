@@ -138,4 +138,5 @@ var students = [
     { "name": "Abdurrehman", "building": "Zaitoon Manzil" },
     { "name": "Uzair", "building": "Lal building" },
     { "name": "Zaid", "building": "Lal building" },
+    { "name": "Zarir(704)", "building": "Elegant Residency" },
 ]
