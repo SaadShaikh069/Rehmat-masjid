@@ -140,3 +140,6 @@ var students = [
     { "name": "Zaid", "building": "Lal building" },
     { "name": "Zarir(704)", "building": "Elegant Residency" },
 ]
+var fourthMonthSathi = [
+    { "name": "Saad Abdul Khalique Shaikh", "building": "Elegant Residency" },
+]
