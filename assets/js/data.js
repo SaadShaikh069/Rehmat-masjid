@@ -203,4 +203,5 @@ var fourthMonthSathi = [
     { "name": "sajid bhai saloon", "building": " " },
     { "name": "sadruddeen bhai", "building": " " },
     { "name": "ishtiyaq bhai bag", "building": " " },
+    { "name": "ishtiyaq bhai bag", "building": " " },
 ]
