@@ -1,4 +1,4 @@
-const CACHE_NAME = "rehmat-masjid-v1";
+const CACHE_NAME = "rehmat-masjid-v1.0.1";
 
 const urlsToCache = [
     "/",
