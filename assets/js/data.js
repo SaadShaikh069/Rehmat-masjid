@@ -219,7 +219,6 @@ var fourthMonthSathi = [
     { "name": "shakilur rehman", "building": " " },
     { "name": "faisal", "building": " " },
     { "name": "azhar mobile", "building": " " },
-    { "name": "bapu mouddin", "building": " " },
     { "name": "asgar bhai", "building": " " },
     { "name": "siddique bhai", "building": " " },
     { "name": "amjad bin matlubur rehman", "building": " " },
