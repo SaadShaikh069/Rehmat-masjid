@@ -3,6 +3,7 @@
   "short_name": "Rehmat Masjid",
   "description": "Data management system for Rehmat Masjid",
   "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#3b82f6",
@@ -12,7 +13,6 @@
       "src": "assets/media/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
-
     }
   ],
   "categories": ["education", "productivity"],
