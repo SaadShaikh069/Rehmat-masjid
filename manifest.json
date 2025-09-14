@@ -1,35 +1,19 @@
 {
-  "name": "Rehmat Masjid",
+  "name": "Rehmat Masjid Data Management",
   "short_name": "Rehmat Masjid",
-  "start_url": "index.html",
+  "description": "Data management system for Rehmat Masjid",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#d8fff0",
-  "theme_color": "#d8fff0",
+  "background_color": "#f8fafc",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "assets/media/favicon-48.ico",
-      "sizes": "48x48",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "assets/media/favicon-72.ico",
-      "sizes": "72x72",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "assets/media/favicon-96.ico",
-      "sizes": "96x96",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "assets/media/favicon-144.ico",
-      "sizes": "144x144",
-      "type": "image/x-icon"
-    },
-    {
       "src": "assets/media/favicon-og.ico",
-      "sizes": "512x512",
+      "sizes": "16x16",
       "type": "image/x-icon"
     }
-  ]
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en"
 }

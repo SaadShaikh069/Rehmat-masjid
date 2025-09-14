@@ -1,114 +1,320 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --primary-color: #10b981;
+  --primary-light: #34d399;
+  --secondary-color: #64748b;
+  --accent-color: #059669;
+  --dark-color: #065f46;
+  --light-color: #f0fdf4;
+  --text-dark: #334155;
+  --border-color: #d1fae5;
+}
+
 body {
-  background: rgb(216, 255, 240);
-  background: linear-gradient(
-    341deg,
-    rgba(216, 255, 240, 1) 0%,
-    rgba(192, 233, 237, 1) 50%,
-    rgba(211, 238, 218, 1) 100%
-  );
-  font-family: "Roboto Condensed", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-.card-header {
-  background: rgb(215, 253, 235);
-  background: linear-gradient(341deg, rgba(215, 253, 235, 1) 0%, rgba(211, 240, 221, 1) 93%);
-}
-.display-6 {
-  font-weight: 400 !important;
-}
-#example > thead > tr > th {
-  background: rgb(215, 253, 235);
-  background: linear-gradient(341deg, rgba(215, 253, 235, 1) 0%, rgba(211, 240, 221, 1) 93%);
-}
-/* Updated button layout styles for vanilla JS implementation */
-.dt-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
-  grid-gap: 10px;
-}
-.dt-buttons button {
-  width: 100%;
-}
-.dt-buttons .excel,
-.dt-buttons .pdf {
-  grid-column: span 1;
-}
-.dt-buttons .w-100 {
-  grid-column: span 2;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f8fafc;
+  color: var(--text-dark);
+  font-weight: 400;
 }
 
-/* Updated pagination styles for vanilla JS pagination */
-.pagination-container .page-link {
-  background-color: #dbf0df !important;
-  border-color: #dbf0df !important;
-  color: #333 !important;
-}
-.pagination-container .page-item.active .page-link {
-  background: linear-gradient(109.6deg, rgb(170, 255, 169) 11.2%, rgb(17, 255, 189) 91.1%) !important;
-  border-color: transparent !important;
-  color: #333 !important;
-}
-.pagination-container .page-link:hover {
-  background: linear-gradient(109.6deg, rgb(170, 255, 169) 11.2%, rgb(17, 255, 189) 91.1%) !important;
-  border-color: transparent !important;
-  color: #333 !important;
+/* Updated navbar and sidebar styles for better mobile experience */
+.navbar {
+  height: 56px;
+  background-color: var(--primary-color) !important;
 }
 
-.nav {
-  background-image: url("../media/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-aside {
-  height: 100vh;
-  width: 70vw;
+/* Sidebar Styles */
+.sidebar {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  min-height: calc(100vh - 56px);
   position: fixed;
-  top: 0;
-  left: -100vw;
-  background: rgb(215, 253, 235);
-  z-index: 10;
-  transition: left 0.3s ease-out;
-}
-aside > div {
-  text-align: end;
-}
-aside > div > h3 {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
+  top: 56px;
+  left: -100%;
+  width: 280px;
+  z-index: 1000;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-aside > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-top: 5vh !important;
+.sidebar.show {
+  left: 0;
 }
-aside > ul > li {
+
+.sidebar-content {
+  padding-top: 1rem;
+}
+
+.list-group-item {
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+}
+
+.list-group-item:hover,
+.list-group-item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateX(5px);
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  min-height: calc(100vh - 56px);
+}
+
+/* Improved mobile responsive design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+
+  .btn-group .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-group .btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .card-header h6 {
+    font-size: 0.9rem;
+  }
+
+  .pagination .page-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Table Styles */
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  background-color: var(--light-color);
+  color: var(--text-dark);
+  border: none;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  padding: 1rem 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.table td {
+  vertical-align: middle;
+  border-color: var(--border-color);
+  padding: 0.75rem;
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--light-color);
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
   margin-bottom: 1rem;
 }
-aside > ul > li > a {
-  color: #333;
-  text-decoration: none;
-  display: block;
-  padding: 0.5rem 1rem;
+
+.card-header {
+  background-color: white;
+  border-bottom: 2px solid var(--border-color);
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 1rem 1.25rem;
 }
-aside > ul > li > a:hover {
-  background-color: #eee;
+
+/* Pagination Styles */
+.pagination .page-link {
+  color: var(--primary-color);
+  border-color: var(--border-color);
+  padding: 0.5rem 0.75rem;
+  margin: 0 2px;
+  border-radius: 0.5rem;
+  font-weight: 500;
 }
-.active-link {
-  background: linear-gradient(109.6deg, rgb(170, 255, 169) 11.2%, rgb(17, 255, 189) 91.1%);
+
+.pagination .page-link:hover {
+  background-color: var(--light-color);
+  border-color: var(--primary-color);
+  color: var(--accent-color);
 }
-#overlay {
-  display: none;
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #fff;
+  border-color: var(--border-color);
+}
+
+.pagination .page-ellipsis {
+  color: var(--secondary-color);
+  padding: 0.5rem 0.75rem;
+  margin: 0 2px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Controls */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.5rem;
+  border-color: var(--border-color);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-info:hover {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Loading Overlay */
+.loading-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-overlay.show {
+  display: flex;
+}
+
+/* Badge Styles */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+/* Input Group */
+.input-group-text {
+  background-color: var(--light-color);
+  border-color: var(--border-color);
+  color: var(--primary-color);
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+/* Added overlay for mobile sidebar */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.sidebar-overlay.show {
+  display: block;
+}
+
+/* Smooth Transitions */
+.btn,
+.card,
+.list-group-item {
+  transition: all 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-color);
+}
+
+/* Added index column styling for better visibility */
+.index-column {
+  width: 60px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--secondary-color);
 }

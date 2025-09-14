@@ -1,30 +1,28 @@
-// Global variables
+// Global variables for 4 Mah Sathi page
 let currentData = []
 let filteredData = []
 let currentPage = 1
 let itemsPerPage = 25
-let currentDataType = "students"
-const html2canvas = window.html2canvas // Declare the html2canvas variable
+
+// Import html2canvas
+const html2canvas = window.html2canvas
 
 // Initialize the application
 document.addEventListener("DOMContentLoaded", () => {
     initializeApp()
     setupEventListeners()
-    loadData("students")
+    loadData()
 })
 
 // Initialize application
 function initializeApp() {
-    updateDataTitle("Students")
-    populateBuildingFilter()
+    // No building filter needed for this page
 }
 
 // Setup event listeners
 function setupEventListeners() {
     document.getElementById("searchInput").addEventListener("input", handleSearch)
     document.getElementById("perPageSelect").addEventListener("change", handlePerPageChange)
-    document.getElementById("buildingFilter").addEventListener("change", handleBuildingFilter)
-    window.addEventListener("resize", handleResize)
 
     document.addEventListener("click", (e) => {
         const sidebar = document.getElementById("sidebar")
@@ -43,50 +41,20 @@ function toggleSidebar() {
     sidebar.classList.toggle("show")
 }
 
-function handleResize() {
-    const sidebar = document.getElementById("sidebar")
-    if (window.innerWidth > 768 && sidebar.classList.contains("show")) {
-        // Keep sidebar open on desktop
-    } else if (window.innerWidth <= 768) {
-        // Auto close on mobile when resizing
-        sidebar.classList.remove("show")
-    }
-}
-
-// Switch data list
-function switchDataList(dataType) {
-
-    // Update active sidebar item
-    document.querySelectorAll(".list-group-item").forEach((item) => {
-        item.classList.remove("active")
-    })
-    event.target.classList.add("active")
-
-    currentDataType = dataType
-    loadData(dataType)
-    updateDataTitle(dataType.charAt(0).toUpperCase() + dataType.slice(1))
-
-    // Close sidebar on mobile
-    if (window.innerWidth <= 768) {
-        toggleSidebar()
-    }
-}
-
-function loadData(dataType) {
+function loadData() {
     showLoading()
 
     setTimeout(() => {
         try {
-            currentData = window[dataType] || []
+            currentData = window.fourthMonthSathi || []
 
             if (currentData.length === 0) {
-                console.log("No data found for:", dataType)
+                console.log("No data found for fourthMonthSathi")
             }
 
             filteredData = [...currentData]
             currentPage = 1
 
-            populateBuildingFilter()
             renderTable()
             renderPagination()
             updateInfo()
@@ -98,28 +66,10 @@ function loadData(dataType) {
     }, 300)
 }
 
-function updateDataTitle(title) {
-    document.getElementById("dataTitle").textContent = `${title} Data`
-}
-
-function populateBuildingFilter() {
-    const buildingFilter = document.getElementById("buildingFilter")
-    const buildings = [...new Set(currentData.map((item) => item.building))].sort()
-
-    buildingFilter.innerHTML = '<option value="">All Buildings</option>'
-    buildings.forEach((building) => {
-        const option = document.createElement("option")
-        option.value = building
-        option.textContent = building
-        buildingFilter.appendChild(option)
-    })
-}
-
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase()
-
     filteredData = currentData.filter((item) => {
-        return Object.values(item).some((value) => value.toString().toLowerCase().includes(searchTerm))
+        return item.name.toLowerCase().includes(searchTerm)
     })
 
     currentPage = 1
@@ -136,55 +86,16 @@ function handlePerPageChange(event) {
     updateInfo()
 }
 
-function handleBuildingFilter(event) {
-    const building = event.target.value
-
-    if (building) {
-        filteredData = currentData.filter((item) => item.building === building)
-    } else {
-        filteredData = [...currentData]
-    }
-
-    // Apply search if there's a search term
-    const searchTerm = document.getElementById("searchInput").value.toLowerCase()
-    if (searchTerm) {
-        filteredData = filteredData.filter((item) => {
-            return Object.values(item).some((value) => value.toString().toLowerCase().includes(searchTerm))
-        })
-    }
-
-    currentPage = 1
-    renderTable()
-    renderPagination()
-    updateInfo()
-}
-
 function renderTable() {
-    const tableHeaders = document.getElementById("tableHeaders")
     const tableBody = document.getElementById("tableBody")
-
-    tableHeaders.innerHTML = ""
     tableBody.innerHTML = ""
 
     if (filteredData.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="100%" class="text-center py-4 text-muted">No data found</td></tr>'
+        tableBody.innerHTML = '<tr><td colspan="2" class="text-center py-4 text-muted">No data found</td></tr>'
         return
     }
 
-    const indexTh = document.createElement("th")
-    indexTh.textContent = "#"
-    indexTh.className = "index-column"
-    tableHeaders.appendChild(indexTh)
-
-    // Generate headers dynamically
-    const headers = Object.keys(filteredData[0])
-    headers.forEach((header) => {
-        const th = document.createElement("th")
-        th.textContent = header.charAt(0).toUpperCase() + header.slice(1)
-        tableHeaders.appendChild(th)
-    })
-
-    // Generate table rows
+    // Generate table rows with index and name only
     const startIndex = (currentPage - 1) * itemsPerPage
     const endIndex = itemsPerPage === filteredData.length ? filteredData.length : startIndex + itemsPerPage
     const pageData = filteredData.slice(startIndex, endIndex)
@@ -192,16 +103,17 @@ function renderTable() {
     pageData.forEach((item, index) => {
         const row = document.createElement("tr")
 
+        // Index column
         const indexTd = document.createElement("td")
         indexTd.textContent = startIndex + index + 1
         indexTd.className = "index-column"
         row.appendChild(indexTd)
 
-        headers.forEach((header) => {
-            const td = document.createElement("td")
-            td.textContent = item[header] || "-"
-            row.appendChild(td)
-        })
+        // Name column
+        const nameTd = document.createElement("td")
+        nameTd.textContent = item.name
+        row.appendChild(nameTd)
+
         tableBody.appendChild(row)
     })
 }
@@ -333,17 +245,16 @@ function getVisibleData() {
 function downloadCSV(data) {
     if (data.length === 0) return
 
-    const headers = Object.keys(data[0])
     const csvContent = [
-        headers.join(","),
-        ...data.map((row) => headers.map((header) => `"${row[header]}"`).join(",")),
+        "Index,Name",
+        ...data.map((row, index) => `"${(currentPage - 1) * itemsPerPage + index + 1}","${row.name}"`),
     ].join("\n")
 
     const blob = new Blob([csvContent], { type: "text/csv" })
     const url = window.URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url
-    link.download = `${currentDataType}_${new Date().toISOString().split("T")[0]}.csv`
+    link.download = `4-mah-sathi_${new Date().toISOString().split("T")[0]}.csv`
     link.click()
     window.URL.revokeObjectURL(url)
 }
@@ -357,24 +268,20 @@ function downloadPDF(data) {
     // Set title
     doc.setFontSize(16)
     doc.setFont(undefined, "bold")
-    doc.text(`${currentDataType.toUpperCase()} DATA`, 20, 20)
+    doc.text("4 MAH SATHI DATA", 20, 20)
 
     // Set date
     doc.setFontSize(10)
     doc.setFont(undefined, "normal")
     doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 20, 30)
 
-    // Table headers
-    const headers = data.length > 0 ? Object.keys(data[0]) : []
     let y = 50
 
     // Draw table header
     doc.setFontSize(12)
     doc.setFont(undefined, "bold")
     doc.text("#", 20, y)
-    headers.forEach((header, index) => {
-        doc.text(header.toUpperCase(), 40 + index * 60, y)
-    })
+    doc.text("NAME", 40, y)
 
     // Draw table rows
     doc.setFont(undefined, "normal")
@@ -389,13 +296,10 @@ function downloadPDF(data) {
         }
 
         doc.text(String((currentPage - 1) * itemsPerPage + index + 1), 20, y)
-        headers.forEach((header, headerIndex) => {
-            const text = String(row[header]).substring(0, 20) // Limit text length
-            doc.text(text, 40 + headerIndex * 60, y)
-        })
+        doc.text(String(row.name), 40, y)
     })
 
-    doc.save(`${currentDataType}_${new Date().toISOString().split("T")[0]}.pdf`)
+    doc.save(`4-mah-sathi_${new Date().toISOString().split("T")[0]}.pdf`)
 }
 
 function downloadTableImage() {
@@ -410,7 +314,7 @@ function downloadTableImage() {
         .then((canvas) => {
             // Create download link
             const link = document.createElement("a")
-            link.download = `${currentDataType}_${new Date().toISOString().split("T")[0]}.png`
+            link.download = `4-mah-sathi_${new Date().toISOString().split("T")[0]}.png`
             link.href = canvas.toDataURL()
             link.click()
         })
@@ -426,13 +330,12 @@ function downloadTableImageFallback() {
     const ctx = canvas.getContext("2d")
 
     const visibleData = getVisibleData()
-    const headers = visibleData.length > 0 ? Object.keys(visibleData[0]) : []
 
     // Calculate canvas size based on content
     const rowHeight = 25
     const headerHeight = 40
     const titleHeight = 60
-    canvas.width = Math.max(600, headers.length * 120 + 100)
+    canvas.width = 500
     canvas.height = titleHeight + headerHeight + visibleData.length * rowHeight + 40
 
     // Fill background
@@ -442,7 +345,7 @@ function downloadTableImageFallback() {
     // Draw title
     ctx.fillStyle = "#059669"
     ctx.font = "bold 18px Inter"
-    ctx.fillText(`${currentDataType.toUpperCase()} DATA`, 20, 30)
+    ctx.fillText("4 MAH SATHI DATA", 20, 30)
 
     // Draw date
     ctx.fillStyle = "#6b7280"
@@ -454,9 +357,7 @@ function downloadTableImageFallback() {
     ctx.fillStyle = "#059669"
     ctx.font = "bold 14px Inter"
     ctx.fillText("#", 20, y)
-    headers.forEach((header, index) => {
-        ctx.fillText(header.toUpperCase(), 60 + index * 120, y)
-    })
+    ctx.fillText("NAME", 60, y)
 
     // Draw data rows
     ctx.fillStyle = "#374151"
@@ -464,10 +365,7 @@ function downloadTableImageFallback() {
     visibleData.forEach((row, index) => {
         y += rowHeight
         ctx.fillText(String((currentPage - 1) * itemsPerPage + index + 1), 20, y)
-        headers.forEach((header, headerIndex) => {
-            const text = String(row[header]).substring(0, 18)
-            ctx.fillText(text, 60 + headerIndex * 120, y)
-        })
+        ctx.fillText(String(row.name), 60, y)
     })
 
     // Download image
@@ -475,7 +373,7 @@ function downloadTableImageFallback() {
         const url = window.URL.createObjectURL(blob)
         const link = document.createElement("a")
         link.href = url
-        link.download = `${currentDataType}_${new Date().toISOString().split("T")[0]}.png`
+        link.download = `4-mah-sathi_${new Date().toISOString().split("T")[0]}.png`
         link.click()
         window.URL.revokeObjectURL(url)
     })
