@@ -2,7 +2,7 @@
   "name": "Rehmat Masjid",
   "short_name": "Rehmat Masjid",
   "description": "Data management system for Rehmat Masjid",
-  "start_url": "/Rehmat-masjid/index.html",
+  "start_url": "index.html",
   "scope": "/Rehmat-masjid/",
   "display": "standalone",
   "background_color": "#f8fafc",
